@@ -24,7 +24,7 @@ export default function PricingPage() {
             <section className={styles.faqPreview}>
                 <div className={styles.container}>
                     <h2>Have Questions?</h2>
-                    <p>We're here to help you start your journey.</p>
+                    <p>We&apos;re here to help you start your journey.</p>
                     <Link href="/contact" className={styles.contactBtn}>Contact Support</Link>
                 </div>
             </section>

@@ -70,9 +70,10 @@ export function UserProvider({ children }: { children: ReactNode }) {
     useEffect(() => {
         if (initialized.current) return;
         initialized.current = true;
-        
-        // Use void to handle the promise without awaiting
-        void refreshUser();
+
+        Promise.resolve().then(() => {
+            refreshUser();
+        });
     }, [refreshUser]);
 
     const logout = useCallback(async () => {

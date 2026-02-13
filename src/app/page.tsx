@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar';
 import Pricing from '@/components/Pricing';
-import { Sparkles, BookOpen, Music, Globe, ArrowRight, Shield } from 'lucide-react';
+import { Sparkles, BookOpen, Music, Globe, ArrowRight } from 'lucide-react';
 import styles from './page.module.css';
 import Link from 'next/link';
 

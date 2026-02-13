@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import Link from 'next/link';
 import { Plus, Palette, Music, Gamepad2, Trash2, Edit, Eye, Globe } from 'lucide-react';
@@ -45,11 +45,7 @@ export default function AdminActivitiesPage() {
     });
     const [assetUrl, setAssetUrl] = useState('');
 
-    useEffect(() => {
-        fetchActivities();
-    }, []);
-
-    async function fetchActivities() {
+    const fetchActivities = useCallback(async () => {
         const { data } = await supabase
             .from('content_items')
             .select('*')
@@ -57,12 +53,18 @@ export default function AdminActivitiesPage() {
             .order('created_at', { ascending: false });
         setActivities(data || []);
         setLoading(false);
-    }
+    }, []);
+
+    useEffect(() => {
+        Promise.resolve().then(() => {
+            fetchActivities();
+        });
+    }, [fetchActivities]);
 
     async function handleCreate(e: React.FormEvent) {
         e.preventDefault();
         const slug = formData.slug || formData.title.toLowerCase().replace(/\s+/g, '-');
-        
+
         const { error } = await supabase.from('content_items').insert({
             ...formData,
             slug,

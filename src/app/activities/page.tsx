@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { createClient } from '@/lib/supabase/client';
 import Navbar from '@/components/Navbar';
-import { Palette, Music, Gamepad2, BookOpen, Star, Lock, CheckCircle } from 'lucide-react';
+import { Palette, Music, Gamepad2, BookOpen, Star, Lock } from 'lucide-react';
 import styles from './Activities.module.css';
 
 const supabase = createClient();
@@ -67,7 +67,7 @@ export default function ActivitiesPage() {
     return (
         <div className={styles.page}>
             <Navbar />
-            
+
             <header className={styles.header}>
                 <div className={styles.container}>
                     <h1 className={styles.title}>

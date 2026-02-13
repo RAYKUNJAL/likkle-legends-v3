@@ -1,0 +1,168 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+
+.badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background: rgba(255, 184, 0, 0.1);
+    color: var(--warning);
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.mainGrid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 32px;
+}
+
+.modules h3 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.moduleList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.moduleItem {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 24px;
+    transition: transform 0.2s ease;
+}
+
+.moduleItem:hover {
+    transform: translateX(8px);
+}
+
+.moduleIcon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--glass);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary);
+}
+
+.moduleItem[data-status="completed"] .moduleIcon {
+    background: rgba(0, 255, 148, 0.1);
+    color: var(--success);
+}
+
+.moduleItem[data-status="locked"] {
+    opacity: 0.5;
+    filter: grayscale(1);
+    cursor: not-allowed;
+}
+
+.moduleContent {
+    flex: 1;
+}
+
+.moduleContent h4 {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+.moduleContent span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: capitalize;
+}
+
+.startBtn {
+    padding: 10px 20px;
+    background: var(--secondary);
+    color: white;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.certCard,
+.infoCard {
+    padding: 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.certCard h4 {
+    font-size: 1.2rem;
+}
+
+.certCard p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.disabledBtn {
+    width: 100%;
+    padding: 12px;
+    background: var(--glass);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    color: var(--text-muted);
+}
+
+.infoCard {
+    text-align: left;
+    align-items: flex-start;
+}
+
+.infoCard ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.infoCard li {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.infoCard li::before {
+    content: '→';
+    color: var(--secondary);
+}

@@ -1,0 +1,258 @@
+.page {
+  background: var(--background);
+  padding-top: 80px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero {
+  position: relative;
+  padding: 120px 0;
+  overflow: hidden;
+}
+
+.heroGlow {
+  position: absolute;
+  top: -10%;
+  right: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(255, 51, 102, 0.15) 0%, transparent 70%);
+  filter: blur(60px);
+}
+
+.heroContent {
+  max-width: 700px;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 100px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 72px;
+  margin-bottom: 24px;
+  line-height: 1.1;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  font-size: 20px;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+.ctas {
+  display: flex;
+  gap: 16px;
+}
+
+.primaryCTA {
+  padding: 16px 32px;
+  background: var(--primary);
+  color: white;
+  border-radius: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: transform 0.2s;
+}
+
+.primaryCTA:hover {
+  transform: translateY(-2px);
+}
+
+.secondaryCTA {
+  padding: 16px 32px;
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+
+.secondaryCTA:hover {
+  background: var(--surface-hover);
+}
+
+.heroVisual {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 400px;
+  display: none;
+  /* Hide on smaller screens */
+}
+
+@media (min-width: 1024px) {
+  .heroVisual {
+    display: block;
+  }
+}
+
+.floatingCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 24px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  box-shadow: var(--shadow-lg);
+  position: absolute;
+  animation: float 6s ease-in-out infinite;
+}
+
+.card2 {
+  bottom: 40px;
+  right: 40px;
+  animation-delay: -3s;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardInfo strong {
+  font-size: 16px;
+}
+
+.cardInfo span {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.icon1 {
+  color: var(--primary);
+}
+
+.icon2 {
+  color: var(--secondary);
+}
+
+.featuresSection {
+  padding: 100px 0;
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.sectionTitle {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.sectionSubtitle {
+  color: var(--text-muted);
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+}
+
+.featureCard {
+  padding: 40px;
+}
+
+.featureIcon {
+  width: 48px;
+  height: 48px;
+  background: var(--glass);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--primary);
+}
+
+.footer {
+  padding: 80px 0 40px;
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+}
+
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.footerBrand p {
+  color: var(--text-muted);
+  font-size: 14px;
+  max-width: 300px;
+  margin-top: 12px;
+}
+
+.footerLinks h3 {
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.footerLinks a {
+  display: block;
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 12px;
+  transition: color 0.2s;
+}
+
+.footerLinks a:hover {
+  color: var(--text);
+}
+
+.copyright {
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 40px;
+  }
+
+  .hero {
+    padding: 80px 0;
+  }
+}

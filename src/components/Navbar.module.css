@@ -1,0 +1,112 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: rgba(10, 10, 15, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    z-index: 1000;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.desktopNav {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+}
+
+.desktopNav a {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+    transition: color 0.2s;
+}
+
+.desktopNav a:hover {
+    color: var(--text);
+}
+
+.authButtons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.loginBtn {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.signupBtn {
+    padding: 10px 24px;
+    background: var(--primary);
+    color: white !important;
+    border-radius: 10px;
+    font-weight: 700;
+}
+
+.userSection {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.adminBtn {
+    padding: 8px 16px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 13px !important;
+}
+
+.logoutBtn {
+    font-size: 13px;
+    color: var(--error);
+    font-weight: 600;
+}
+
+.mobileToggle {
+    display: none;
+    color: white;
+}
+
+.mobileNav {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .desktopNav {
+        display: none;
+    }
+
+    .mobileToggle {
+        display: block;
+    }
+
+    .mobileNav {
+        display: flex;
+        flex-direction: column;
+        background: var(--surface);
+        padding: 20px;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+    }
+}

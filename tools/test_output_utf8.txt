@@ -1,0 +1,96 @@
+﻿[dotenv@17.3.1] injecting env (13) from .env.local -- tip: ≡ƒöÉ prevent committing .env to code: https://dotenvx.com/precommit
+--- Testing Views ---
+node : Γ¥î View 
+"v_admin_kpis_today" 
+failed: Could not find the 
+table 
+'public.v_admin_kpis_today' 
+in the schema cache
+At line:1 char:1
++ node tools/test_schema.js 
+> tools/test_output.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          
+    : NotSpecified: (Γ¥î V  
+  iew "v_adm...he schema    
+ cache:String) [], Remot    
+eException
+    + FullyQualifiedErrorId 
+    : NativeCommandError
+ 
+Γ¥î View 
+"v_admin_ai_usage_30d" 
+failed: Could not find the 
+table 'public.v_admin_ai_usa
+ge_30d' in the schema cache
+Γ¥î View 
+"v_admin_lead_sources_7d" 
+failed: Could not find the 
+table 'public.v_admin_lead_s
+ources_7d' in the schema 
+cache
+Γ¥î View "v_admin_subscripti
+ons_breakdown" failed: 
+Could not find the table 'pu
+blic.v_admin_subscriptions_b
+reakdown' in the schema 
+cache
+Γ¥î View 
+"v_admin_jobs_queue" 
+failed: Could not find the 
+table 
+'public.v_admin_jobs_queue' 
+in the schema cache
+Γ¥î View "v_admin_contest_li
+ve_status" failed: Could 
+not find the table 'public.v
+_admin_contest_live_status' 
+in the schema cache
+Γ¥î View "v_admin_affiliate_
+performance" failed: Could 
+not find the table 'public.v
+_admin_affiliate_performance
+' in the schema cache
+Γ¥î View 
+"v_coppa_consent_coverage" 
+failed: Could not find the 
+table 'public.v_coppa_consen
+t_coverage' in the schema 
+cache
+Γ¥î View 
+"v_coppa_pending_requests" 
+failed: Could not find the 
+table 'public.v_coppa_pendin
+g_requests' in the schema 
+cache
+Γ¥î View 
+"v_coppa_vendor_health" 
+failed: Could not find the 
+table 'public.v_coppa_vendor
+_health' in the schema cache
+Γ¥î View "v_coppa_retention_
+enforcement" failed: Could 
+not find the table 'public.v
+_coppa_retention_enforcement
+' in the schema cache
+Γ¥î View 
+"v_coppa_admin_access_log" 
+failed: Could not find the 
+table 'public.v_coppa_admin_
+access_log' in the schema 
+cache
+Γ¥î View "v_coppa_incident_d
+ashboard" failed: Could not 
+find the table 'public.v_cop
+pa_incident_dashboard' in 
+the schema cache
+Γ¥î View 
+"v_coppa_metrics_today" 
+failed: Could not find the 
+table 'public.v_coppa_metric
+s_today' in the schema cache
+
+--- Testing RPCs ---
+Γ£à RPC "rpc_check_ai_limit" exists (called, result may be null/error due to dummy data).
+Γ£à RPC "rpc_verify_parental_consent" exists (called, result may be null/error due to dummy data).

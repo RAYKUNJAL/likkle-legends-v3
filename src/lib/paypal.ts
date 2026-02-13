@@ -1,0 +1,116 @@
+// PayPal Integration for Likkle Legends v3
+// Ported from v2 original with v3 architecture updates
+
+export const PAYPAL_CONFIG = {
+    clientId: process.env.NEXT_PUBLIC_PAYPAL_CLIENT_ID || '',
+    currency: 'USD',
+    intent: 'subscription',
+};
+
+export const SUBSCRIPTION_PLANS = {
+    plan_free_forever: {
+        id: 'plan_free_forever',
+        name: 'Free Forever',
+        paypalPlanId: '',
+        paypalPlanIdYearly: '',
+        price: 0.00,
+        priceYearly: 0.00,
+        interval: 'month',
+        description: 'Everything your child needs to begin their journey',
+        features: [
+            'Core stories, songs, and activities',
+            'Island Radio access',
+            'Basic progress badges',
+            'Dialect Dial (Standard + Local)',
+            'Teacher/school access (unlimited)'
+        ],
+    },
+    plan_digital_legends: {
+        id: 'plan_digital_legends',
+        name: 'Digital Legends',
+        paypalPlanId: process.env.NEXT_PUBLIC_PAYPAL_PLAN_DIGITAL || 'P-DIGITAL_LEGENDS_ID',
+        paypalPlanIdYearly: process.env.NEXT_PUBLIC_PAYPAL_PLAN_DIGITAL_YEARLY || 'P-DIGITAL_LEGENDS_YEARLY_ID',
+        price: 4.99,
+        priceYearly: 49.90,
+        interval: 'month',
+        description: 'Unlimited digital learning — no mail required',
+        features: [
+            'Everything in Free Forever',
+            'Unlimited digital downloads',
+            'Personalized storybooks',
+            'Offline access packs',
+            'Ad-free experience'
+        ],
+    },
+    plan_mail_intro: {
+        id: 'plan_mail_intro',
+        name: 'Legend Mail Intro',
+        paypalPlanId: process.env.NEXT_PUBLIC_PAYPAL_PLAN_MAIL || 'P-MAIL_INTRO_ID',
+        paypalPlanIdYearly: process.env.NEXT_PUBLIC_PAYPAL_PLAN_MAIL_YEARLY || 'P-MAIL_INTRO_YEARLY_ID',
+        price: 9.99,
+        priceYearly: 99.00,
+        interval: 'month',
+        description: 'Bring Caribbean culture into your child’s hands',
+        features: [
+            'Everything in Digital Legends',
+            'Monthly physical mail package',
+            'Printed stories and activities',
+            'Stickers, badges, and surprises',
+            'Collectible character keepsakes'
+        ],
+    },
+    plan_legends_plus: {
+        id: 'plan_legends_plus',
+        name: 'Legends Plus',
+        paypalPlanId: process.env.NEXT_PUBLIC_PAYPAL_PLAN_PLUS || 'P-LEGENDS_PLUS_ID',
+        paypalPlanIdYearly: process.env.NEXT_PUBLIC_PAYPAL_PLAN_PLUS_YEARLY || 'P-LEGENDS_PLUS_YEARLY_ID',
+        price: 19.99,
+        priceYearly: 199.00,
+        interval: 'month',
+        description: 'The complete cultural learning experience',
+        features: [
+            'Everything in Legend Mail Intro',
+            'Expanded AI Story Studio access',
+            'Premium digital library',
+            'Exclusive monthly activities',
+            'Enhanced personalization'
+        ],
+    },
+    plan_family_legacy: {
+        id: 'plan_family_legacy',
+        name: 'Family Legacy',
+        paypalPlanId: process.env.NEXT_PUBLIC_PAYPAL_PLAN_FAMILY || 'P-FAMILY_LEGACY_ID',
+        paypalPlanIdYearly: process.env.NEXT_PUBLIC_PAYPAL_PLAN_FAMILY_YEARLY || 'P-FAMILY_LEGACY_YEARLY_ID',
+        price: 34.99,
+        priceYearly: 349.00,
+        interval: 'month',
+        description: 'Preserve culture across generations',
+        features: [
+            'Everything in Legends Plus',
+            'Multiple child profiles',
+            'Quarterly heritage box',
+            'Grandparent participation access',
+            'Priority support'
+        ],
+    },
+};
+
+export type SubscriptionTier = keyof typeof SUBSCRIPTION_PLANS;
+
+export const CURRENCY_MAP: Record<string, { code: string; symbol: string; multiplier: number }> = {
+    US: { code: 'USD', symbol: '$', multiplier: 1 },
+    GB: { code: 'GBP', symbol: '£', multiplier: 0.79 },
+    CA: { code: 'CAD', symbol: 'C$', multiplier: 1.36 },
+    JM: { code: 'USD', symbol: '$', multiplier: 1 },
+    TT: { code: 'USD', symbol: '$', multiplier: 1 },
+    BB: { code: 'USD', symbol: '$', multiplier: 1 },
+};
+
+export function getLocalizedPrice(basePrice: number, countryCode: string): { price: number; currency: string; symbol: string } {
+    const currencyInfo = CURRENCY_MAP[countryCode] || CURRENCY_MAP.US;
+    return {
+        price: Math.round(basePrice * currencyInfo.multiplier * 100) / 100,
+        currency: currencyInfo.code,
+        symbol: currencyInfo.symbol,
+    };
+}

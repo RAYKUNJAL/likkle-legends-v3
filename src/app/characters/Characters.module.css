@@ -1,0 +1,108 @@
+.page {
+    background: var(--background);
+    padding-top: 80px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    padding: 100px 0 60px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 100px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 24px;
+}
+
+.title {
+    font-size: 56px;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: var(--text-muted);
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+}
+
+.card {
+    padding: 40px;
+    text-align: center;
+}
+
+.iconBox {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 24px;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.role {
+    display: block;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 16px;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.bottomCTA {
+    margin: 100px 0;
+    text-align: center;
+}
+
+.bottomCTA h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+}
+
+.ctaBtn {
+    background: var(--primary);
+    color: white;
+    padding: 16px 40px;
+    border-radius: 100px;
+    font-weight: 700;
+}
+
+.footer {
+    padding: 40px 0;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+}

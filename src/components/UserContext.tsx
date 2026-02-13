@@ -1,9 +1,21 @@
 "use client";
 
-import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, useCallback, useRef } from 'react';
 import { createClient } from '@/lib/supabase/client';
 
 const supabase = createClient();
+
+interface Subscription {
+    plan_id: string;
+    status: string;
+}
+
+interface ProfileWithSubscriptions {
+    id: string;
+    first_name: string;
+    email: string;
+    subscriptions?: Subscription[];
+}
 
 interface Profile {
     id: string;
@@ -26,6 +38,7 @@ const UserContext = createContext<UserContextType | undefined>(undefined);
 export function UserProvider({ children }: { children: ReactNode }) {
     const [user, setUser] = useState<Profile | null>(null);
     const [isLoading, setIsLoading] = useState(true);
+    const initialized = useRef(false);
 
     const refreshUser = useCallback(async () => {
         const { data: { session } } = await supabase.auth.getSession();
@@ -42,7 +55,8 @@ export function UserProvider({ children }: { children: ReactNode }) {
             .single();
 
         if (profile) {
-            const { subscriptions, ...userData } = profile as any;
+            const typedProfile = profile as ProfileWithSubscriptions;
+            const { subscriptions, ...userData } = typedProfile;
             const latestSub = subscriptions?.[0];
             setUser({
                 ...userData,
@@ -54,13 +68,17 @@ export function UserProvider({ children }: { children: ReactNode }) {
     }, []);
 
     useEffect(() => {
-        refreshUser();
+        if (initialized.current) return;
+        initialized.current = true;
+        
+        // Use void to handle the promise without awaiting
+        void refreshUser();
     }, [refreshUser]);
 
-    const logout = async () => {
+    const logout = useCallback(async () => {
         await supabase.auth.signOut();
         setUser(null);
-    };
+    }, []);
 
     const value = {
         user,

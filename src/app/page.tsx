@@ -28,7 +28,7 @@ export default function Home() {
             </p>
             <div className={styles.ctas}>
               <Link href="/signup" className={styles.primaryCTA}>
-                Start Your Child's Adventure <ArrowRight size={20} />
+                Start Your child&apos;s Adventure <ArrowRight size={20} />
               </Link>
               <Link href="/#pricing" className={styles.secondaryCTA}>
                 View Plans
@@ -68,7 +68,7 @@ export default function Home() {
             <div className={`${styles.featureCard} glass-card`}>
               <div className={styles.featureIcon}><BookOpen /></div>
               <h3>Choose Age Path</h3>
-              <p>Pick Mini Legends (4-5) or Big Legends (6-8) to match your child's stage.</p>
+              <p>Pick Mini Legends (4-5) or Big Legends (6-8) to match your child&apos;s stage.</p>
             </div>
             <div className={`${styles.featureCard} glass-card`}>
               <div className={styles.featureIcon}><Globe /></div>

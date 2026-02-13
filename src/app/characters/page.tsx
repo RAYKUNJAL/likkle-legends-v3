@@ -2,7 +2,7 @@
 
 import Navbar from '@/components/Navbar';
 import styles from './Characters.module.css';
-import { Shield, Zap, Heart, Star, Sparkles, Music } from 'lucide-react';
+import { Shield, Zap, Heart, Sparkles, Music } from 'lucide-react';
 import Link from 'next/link';
 
 const characters = [

@@ -12,17 +12,21 @@ import {
     MessageSquare,
     CreditCard,
     ShieldCheck,
-    Activity
+    Activity,
+    Brain,
+    Palette
 } from 'lucide-react';
 import styles from './Sidebar.module.css';
 
 const navItems = [
     { label: 'Command Center', icon: LayoutDashboard, route: '/admin' },
+    { label: 'AI Content Studio', icon: Brain, route: '/admin/content-studio' },
     { label: 'AI Story Studio', icon: Sparkles, route: '/admin/ai' },
+    { label: 'Activities Manager', icon: Palette, route: '/admin/activities' },
     { label: 'Book Projects', icon: BookOpen, route: '/admin/books' },
     { label: 'Content Library', icon: Library, route: '/admin/content' },
     { label: 'Users & Families', icon: Users, route: '/admin/users' },
-    { label: 'Educators', icon: GraduationCap, route: '/admin/educators' },
+    { label: 'Teacher Portal', icon: GraduationCap, route: '/admin/teachers' },
     { label: 'Leads & Growth', icon: TrendingUp, route: '/admin/growth' },
     { label: 'Affiliate', icon: Share2, route: '/admin/affiliate' },
     { label: 'Viral Contests', icon: Trophy, route: '/admin/contests' },

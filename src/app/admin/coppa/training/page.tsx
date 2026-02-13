@@ -1,4 +1,4 @@
-import { supabase } from '@/lib/supabase';
+// Training page
 import { GraduationCap, ShieldCheck, CheckCircle, FileText, Play } from 'lucide-react';
 import styles from './Training.module.css';
 

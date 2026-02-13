@@ -1,0 +1,432 @@
+.container {
+    padding: 1.5rem;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.header h1 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.primaryBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: none;
+    background: transparent;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--muted);
+    transition: all 0.2s ease;
+}
+
+.tab:hover {
+    color: var(--foreground);
+    background: rgba(var(--primary-rgb), 0.05);
+}
+
+.tab.active {
+    color: var(--primary);
+    background: rgba(var(--primary-rgb), 0.1);
+}
+
+/* Overview */
+.overviewGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.statCard {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem;
+}
+
+.statIcon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.statLabel {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.25rem;
+}
+
+.statCard h3 {
+    font-size: 1.5rem;
+}
+
+.recentSection,
+.curriculumPreview {
+    grid-column: span 2;
+    padding: 1.25rem;
+}
+
+.recentSection h3,
+.curriculumPreview h3 {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+
+.teacherRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.teacherRow:last-child {
+    border-bottom: none;
+}
+
+.teacherInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.teacherName {
+    font-weight: 500;
+}
+
+.schoolName {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.verified {
+    color: var(--success);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.pending {
+    color: var(--warning);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.curriculumGrid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.curriculumItem {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+}
+
+.curriculumBar {
+    height: 8px;
+    border-radius: 4px;
+    min-width: 20px;
+}
+
+.curriculumCount {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-left: auto;
+}
+
+/* Teachers Tab */
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.searchBar input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.searchBar button {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.tableCard {
+    padding: 0;
+    overflow: hidden;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.table th {
+    font-weight: 500;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.teacherCell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+}
+
+.teacherCell p {
+    margin: 0;
+    font-weight: 500;
+}
+
+.teacherCell small {
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.actionBtn,
+.verifyBtn {
+    padding: 0.35rem 0.75rem;
+    border: 1px solid var(--border);
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+}
+
+.verifyBtn {
+    border-color: var(--success);
+    color: var(--success);
+}
+
+.loading,
+.empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 2rem;
+}
+
+/* Resources Tab */
+.resourcesHeader {
+    margin-bottom: 1.5rem;
+}
+
+.resourcesHeader h3 {
+    margin-bottom: 0.25rem;
+}
+
+.resourcesHeader p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.resourceGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.resourceCard {
+    padding: 1.25rem;
+    text-align: center;
+}
+
+.resourceIcon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.resourceCard h4 {
+    margin-bottom: 0.25rem;
+}
+
+.resourceType {
+    color: var(--muted);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.resourceMeta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 1rem;
+}
+
+.resourceMeta span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.downloadBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.65rem;
+    border: none;
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Curriculum Tab */
+.curriculumHeader {
+    margin-bottom: 1.5rem;
+}
+
+.curriculumHeader h3 {
+    margin-bottom: 0.25rem;
+}
+
+.curriculumHeader p {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.ageGroups {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.ageCard {
+    padding: 1.25rem;
+}
+
+.ageCard h4 {
+    margin-bottom: 1rem;
+    text-align: center;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.subjectList {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.subjectRow {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+}
+
+.subjectRow span:first-child {
+    min-width: 100px;
+}
+
+.progressBar {
+    flex: 1;
+    height: 8px;
+    background: var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progressFill {
+    height: 100%;
+    background: var(--primary);
+    border-radius: 4px;
+}
+
+@media (max-width: 1024px) {
+    .overviewGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ageGroups {
+        grid-template-columns: 1fr;
+    }
+}

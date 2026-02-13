@@ -66,13 +66,13 @@ export async function POST() {
             .eq('id', job.id);
 
         return NextResponse.json({ message: 'Job processed', job_id: job.id, result });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('Job error:', error);
         await supabase
             .from('jobs')
-            .update({ status: 'failed', error: error.message, updated_at: new Date().toISOString() })
+            .update({ status: 'failed', error: error instanceof Error ? error.message : 'Unknown error', updated_at: new Date().toISOString() })
             .eq('id', job.id);
 
-        return NextResponse.json({ error: error.message }, { status: 500 });
+        return NextResponse.json({ error: error instanceof Error ? error.message : 'Unknown error' }, { status: 500 });
     }
 }

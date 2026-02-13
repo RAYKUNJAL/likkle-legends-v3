@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createClient } from '@supabase/supabase-js';
-import { SUBSCRIPTION_PLANS, SubscriptionTier } from '@/lib/paypal';
+// Subscription types from '@/lib/paypal';
 
 const supabaseAdmin = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -10,13 +10,13 @@ const supabaseAdmin = createClient(
 export async function POST(request: NextRequest) {
     try {
         const body = await request.json();
-        const { subscriptionId, orderId, tier, userId, billingCycle, currency } = body;
+        const { subscriptionId, orderId, tier, userId, billingCycle } = body;
 
         if (!subscriptionId && !orderId) {
             return NextResponse.json({ error: 'Missing subscription or order ID' }, { status: 400 });
         }
 
-        let userIdToUpdate = userId;
+        const userIdToUpdate = userId;
         // In v3, we'd ideally verify the JWT here too.
 
         // Calculate next period end
@@ -46,8 +46,8 @@ export async function POST(request: NextRequest) {
             tier,
             subscriptionId: subscriptionId || orderId,
         });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('PayPal confirmation error:', error);
-        return NextResponse.json({ error: error.message }, { status: 500 });
+        return NextResponse.json({ error: error instanceof Error ? error.message : 'Unknown error' }, { status: 500 });
     }
 }

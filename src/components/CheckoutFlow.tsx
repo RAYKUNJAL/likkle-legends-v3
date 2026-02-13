@@ -53,7 +53,7 @@ export default function CheckoutFlow({ selectedTier, initialBillingCycle, initia
         ? getLocalizedPrice(paymentBillingCycle === 'year' ? (plan.priceYearly || plan.price * 10) : plan.price, geoInfo.countryCode)
         : { price: paymentBillingCycle === 'year' ? (plan.priceYearly || plan.price * 10) : plan.price, currency: 'USD', symbol: '$' };
 
-    const handlePayPalApprove = async (data: any) => {
+    const handlePayPalApprove = async (data: { subscriptionID?: string | null }) => {
         setIsProcessing(true);
         try {
             const userId = user?.id;
@@ -176,7 +176,7 @@ export default function CheckoutFlow({ selectedTier, initialBillingCycle, initia
             {step === 'success' && (
                 <div className={styles.success}>
                     <Sparkles size={64} className={styles.successIcon} />
-                    <h2>You're In! 🎉</h2>
+                    <h2>You&apos;re In! 🎉</h2>
                     <p>Welcome to the Likkle Legends family.</p>
                     <Link href="/admin" className={styles.nextBtn}>Enter Dashboard</Link>
                 </div>

@@ -92,7 +92,7 @@ export default async function CoppaComplianceCenter() {
                             </tr>
                         </thead>
                         <tbody>
-                            {coverage.length > 0 ? coverage.map((row: any) => (
+                            {coverage.length > 0 ? coverage.map((row: { age_band: string; total_children: number; consented_children: number }) => (
                                 <tr key={row.age_band}>
                                     <td>{row.age_band}</td>
                                     <td>{row.total_children}</td>
@@ -120,7 +120,7 @@ export default async function CoppaComplianceCenter() {
                         <h3>Vendor Health</h3>
                     </div>
                     <div className={styles.vendorList}>
-                        {vendors.map((vendor: any) => (
+                        {vendors.map((vendor: { vendor_name: string; health_status: string; dpa_signed: boolean }) => (
                             <div key={vendor.vendor_name} className={styles.vendorItem}>
                                 <div className={styles.vendorInfo}>
                                     <Server size={18} className={vendor.health_status === 'healthy' ? styles.iconHealthy : styles.iconWarning} />
@@ -156,7 +156,7 @@ export default async function CoppaComplianceCenter() {
                             </tr>
                         </thead>
                         <tbody>
-                            {requests.length > 0 ? requests.map((req: any) => (
+                            {requests.length > 0 ? requests.map((req: { id: string; request_type: string; status: string; due_at: string }) => (
                                 <tr key={req.id}>
                                     <td>{req.id.slice(0, 8)}...</td>
                                     <td>{req.request_type}</td>

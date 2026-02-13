@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { supabase } from '@/lib/supabase';
-import { Sparkles, ArrowLeft, Send, Map, BookOpen, UserCircle } from 'lucide-react';
+import { Sparkles, ArrowLeft, Send, Map, BookOpen } from 'lucide-react';
 import styles from './NewProject.module.css';
 import Link from 'next/link';
 
@@ -54,8 +54,8 @@ export default function NewStoryProject() {
             if (jError) throw jError;
 
             router.push('/admin/ai');
-        } catch (err: any) {
-            alert('Error starting project: ' + err.message);
+        } catch (err: unknown) {
+            const message = err instanceof Error ? err.message : 'Unknown error'; alert('Error starting project: ' + message);
         } finally {
             setLoading(false);
         }

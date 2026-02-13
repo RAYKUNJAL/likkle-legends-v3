@@ -1,0 +1,198 @@
+.page {
+    min-height: 100vh;
+    background: var(--background);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.header {
+    padding: 4rem 0 2rem;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(var(--primary-rgb), 0.1) 0%, transparent 100%);
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--muted);
+    font-size: 1.1rem;
+}
+
+.filters {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.filterBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.25rem;
+    border-radius: 100px;
+    border: 1px solid var(--border);
+    background: var(--background);
+    color: var(--foreground);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+}
+
+.filterBtn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.filterBtn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.card {
+    padding: 1.5rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+    border-left: 4px solid var(--accent, var(--primary));
+}
+
+.card:hover {
+    transform: translateY(-4px);
+}
+
+.cardIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    background: rgba(var(--primary-rgb), 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--accent, var(--primary));
+}
+
+.card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    background: rgba(var(--primary-rgb), 0.1);
+    color: var(--primary);
+    font-size: 0.75rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+.playBtn {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    background: var(--primary);
+    color: white;
+    font-weight: 500;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.playBtn:hover {
+    opacity: 0.9;
+}
+
+.loading, .empty {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--muted);
+}
+
+.empty h3 {
+    margin: 1rem 0 0.5rem;
+    color: var(--foreground);
+}
+
+.comingSoon {
+    margin: 4rem 0;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border);
+}
+
+.comingSoon h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--muted);
+}
+
+.previewGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.previewCard {
+    padding: 1.25rem;
+    text-align: center;
+    opacity: 0.6;
+    position: relative;
+}
+
+.lockIcon {
+    color: var(--muted);
+    margin-bottom: 0.5rem;
+}
+
+.previewTitle {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+.previewType {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: capitalize;
+}
+
+.footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+    }
+    
+    .filters {
+        gap: 0.5rem;
+    }
+    
+    .filterBtn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}

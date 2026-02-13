@@ -77,7 +77,7 @@ export default function LoginPage() {
                     </form>
 
                     <p className={styles.footerText}>
-                        Don't have an account? <Link href="/signup">Sign up for free</Link>
+                        Don&apos;t have an account? <Link href="/signup">Sign up for free</Link>
                     </p>
                 </div>
             </div>

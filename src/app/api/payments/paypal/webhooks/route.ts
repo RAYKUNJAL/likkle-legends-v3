@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase'; // Using the public client or should I use a service role client?
+// Service role client for webhooks
 // In v3, we should probably use a service role client for webhooks to bypass RLS.
 // I'll check if there's a service role client.
 
@@ -74,8 +74,8 @@ export async function POST(request: NextRequest) {
         }
 
         return NextResponse.json({ received: true });
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error('PayPal webhook error:', error);
-        return NextResponse.json({ error: error.message }, { status: 500 });
+        return NextResponse.json({ error: error instanceof Error ? error.message : 'Unknown error' }, { status: 500 });
     }
 }

@@ -1,5 +1,5 @@
 import { supabase } from '@/lib/supabase';
-import { Sparkles, Languages, MapPin, Users, History, PlayCircle, Plus } from 'lucide-react';
+import { Sparkles, Languages, MapPin, History, PlayCircle } from 'lucide-react';
 import styles from './AiStudio.module.css';
 import Link from 'next/link';
 import ProcessJobButton from '@/components/ProcessJobButton';

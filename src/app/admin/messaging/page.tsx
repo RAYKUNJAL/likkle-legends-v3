@@ -75,7 +75,7 @@ export default async function MessagingHub() {
                         <h3>Live Feed</h3>
                     </div>
                     <div className={styles.feed}>
-                        {messages.length > 0 ? messages.map((msg: any) => (
+                        {messages.length > 0 ? messages.map((msg: { id: string; channel: string; created_at: string; subject?: string; body?: string; status: string; user?: { first_name?: string } }) => (
                             <div key={msg.id} className={styles.feedItem}>
                                 <div className={styles.msgIcon}>
                                     {msg.channel === 'email' ? <Mail size={16} /> : <MessageSquare size={16} />}
